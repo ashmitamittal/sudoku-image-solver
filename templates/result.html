@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h2>Result</h2>
+    <img src="{{ url_for('static', filename=image) }}" alt="Result Image">
+    <br>
+    <a href="{{ url_for('delete_and_redirect', image_name=image.split('/')[-1]) }}">Try another</a>
+</body>
+</html>

@@ -87,7 +87,6 @@ def get_board(board):
     """Takes a 9x9 matrix unsolved sudoku board and returns a fully solved board."""
     try:
         board = board.tolist()
-        print(board)
         solved = solve_sudoku(board)
         sudoku_np = np.zeros((9, 9), dtype=np.uint8)
         for key, value in solved.items():
