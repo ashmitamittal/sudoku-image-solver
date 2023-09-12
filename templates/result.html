@@ -2,11 +2,22 @@
 <html>
 <head>
     <title>Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
-<body>
-    <h2>Result</h2>
-    <img src="{{ url_for('static', filename=image) }}" alt="Result Image">
-    <br>
-    <a href="{{ url_for('delete_and_redirect', image_name=image.split('/')[-1]) }}">Try another</a>
+<body class="bg-dark text-white">
+    <div class="container mt-5">
+        <div class="text-center">
+            <!-- Optional Sudoku Image -->
+            <!-- <img src="{{ url_for('static', filename='path_to_your_sudoku_image.png') }}" alt="Sudoku" style="max-width: 150px; margin-bottom: 20px;"> -->
+            <h1>Your Sudoku Solution</h1>
+            <p class="lead">Here's the solution to the puzzle you uploaded.</p>
+            <div class="mb-4">
+                <img class="img-fluid" src="{{ url_for('static', filename=image) }}" alt="Result Image" style="border: 2px solid white; padding: 10px;">
+            </div>
+            <a class="btn btn-primary" href="{{ url_for('delete_and_redirect', image_name=image.split('/')[-1]) }}">Try another</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

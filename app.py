@@ -15,6 +15,9 @@ app.config['RESULT_FOLDER'] = RESULT_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    # Clear the folders when the user accesses the home page
+    clear_folders()
+    
     if request.method == 'POST':
         # Check for file in the request
         file = request.files.get('file')
@@ -61,6 +64,18 @@ def delete_and_redirect(image_name):
         os.remove(image_path)
     
     return redirect(url_for('index'))
+
+
+def clear_folders():
+    folders = [app.config['UPLOAD_FOLDER'], app.config['RESULT_FOLDER']]
+    for folder in folders:
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
+            try:
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+            except Exception as e:
+                print(f"Error deleting {file_path}. Reason: {e}")
 
 
 def solve_image_sudoku(image_path):

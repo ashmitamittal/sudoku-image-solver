@@ -79,7 +79,7 @@ def split_boxes(board):
     cv2.destroyAllWindows()
     return boxes
 
-def displayNumbers(img, numbers, color=(0, 255, 0)):
+def displayNumbers(img, numbers, color=(0, 128, 0)):
     """Displays 81 numbers in an image or mask at the same position of each cell of the board"""
     W = int(img.shape[1]/9)
     H = int(img.shape[0]/9)
