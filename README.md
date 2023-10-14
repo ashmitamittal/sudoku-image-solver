@@ -31,9 +31,6 @@ python app.py
 
 Additionally, I have extended this project to include a web interface built using Flask, allowing users to easily access and solve their Sudoku puzzles online.
 
-![Sudoku Image](link_to_some_image_if_you_have)
-
-
 ## Sudoku Puzzle Solved Example
 <img width="350" alt="image" src="https://github.com/ashmitamittal/sudoku-image-solver/assets/83453304/9250db88-5632-4936-b27f-e1607918c910">
 <img width="350" alt="image" src="https://github.com/ashmitamittal/sudoku-image-solver/assets/83453304/72881be3-7e57-43ea-a7aa-e7ae43337123">
